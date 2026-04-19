@@ -3,6 +3,8 @@ import result2 from "@/assets/result-2.jpeg";
 import result3 from "@/assets/result-3.jpeg";
 import result4 from "@/assets/result-4.jpeg";
 import result5 from "@/assets/result-5.jpeg";
+import result6 from "@/assets/result-6.png";
+import result7 from "@/assets/result-7.png";
 import { Reveal } from "./Reveal";
 
 const items = [
@@ -11,6 +13,8 @@ const items = [
   { src: result3, alt: "Painel de vendas R$ 233,30 no dia", caption: "Resultado de 10 dias" },
   { src: result4, alt: "Painel de vendas R$ 101,39 no dia", caption: "Resultado de 11 dias" },
   { src: result5, alt: "Painel de vendas R$ 447,56 no dia", caption: "Resultado de 16 dias" },
+  { src: result6, alt: "Comissões de R$ 155,44 - vendas AUDIUM GOTAS", caption: "4 vendas em 1 dia" },
+  { src: result7, alt: "Notificações KeedPay - vendas no Pix", caption: "Vendas saindo no automático" },
 ];
 
 // Duplicate so the marquee loops seamlessly

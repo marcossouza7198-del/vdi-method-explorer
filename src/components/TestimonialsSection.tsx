@@ -88,10 +88,12 @@ export const TestimonialsSection = () => {
                 >
                   <div className="relative bg-muted rounded-lg overflow-hidden" style={{ aspectRatio: '9/16' }}>
                     <video
+                      key={testimonial.video}
                       className="w-full h-full object-contain bg-background"
                       controls
                       preload="metadata"
                       playsInline
+                      muted
                     >
                       <source src={testimonial.video} type="video/mp4" />
                       Seu navegador não suporta vídeos.
