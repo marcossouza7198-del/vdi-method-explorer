@@ -2,29 +2,43 @@ import { useState, useEffect } from "react";
 import { Clock } from "lucide-react";
 
 export const CountdownTimer = () => {
-  const [time, setTime] = useState({ hours: 2, minutes: 47, seconds: 30 });
+  const [timeLeft, setTimeLeft] = useState<number>(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime((prev) => {
-        if (prev.hours === 0 && prev.minutes === 0 && prev.seconds === 0) {
-          clearInterval(timer);
-          return prev;
-        }
+    // Persistent timer: target 2h 47m from first visit
+    const STORAGE_KEY = 'offer_timer_expiry';
+    const INITIAL_TIME_MS = (2 * 60 * 60 + 47 * 60 + 30) * 1000;
+    
+    let expiry = localStorage.getItem(STORAGE_KEY);
+    
+    if (!expiry) {
+      const newExpiry = Date.now() + INITIAL_TIME_MS;
+      localStorage.setItem(STORAGE_KEY, newExpiry.toString());
+      expiry = newExpiry.toString();
+    }
 
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
+    const calculateTimeLeft = () => {
+      const now = Date.now();
+      const difference = parseInt(expiry!) - now;
+      return Math.max(0, difference);
+    };
+
+    setTimeLeft(calculateTimeLeft());
+
+    const timer = setInterval(() => {
+      const left = calculateTimeLeft();
+      setTimeLeft(left);
+      if (left <= 0) {
+        clearInterval(timer);
+      }
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
+
+  const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 
@@ -32,7 +46,7 @@ export const CountdownTimer = () => {
     <div className="inline-flex items-center gap-2 bg-destructive text-destructive-foreground px-6 py-3 rounded-full animate-pulse hover:scale-110 transition-transform duration-300 shadow-lg shadow-destructive/20 border border-destructive-foreground/20">
       <Clock className="w-5 h-5" />
       <span className="font-bold tabular-nums">
-        OFERTA EXPIRA EM: {formatNumber(time.hours)}h {formatNumber(time.minutes)}m {formatNumber(time.seconds)}s
+        OFERTA EXPIRA EM: {formatNumber(hours)}h {formatNumber(minutes)}m {formatNumber(seconds)}s
       </span>
     </div>
   );
