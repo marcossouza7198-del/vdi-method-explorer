@@ -1,4 +1,5 @@
 import { Flame } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const painPoints = [
   {
@@ -61,10 +62,11 @@ export const PainSection = () => {
 
         <div className="max-w-4xl mx-auto space-y-6">
           {painPoints.map((pain, index) => (
-            <div
+            <Reveal
               key={index}
-              className="pain-card group animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-8"
-              style={{ animationDelay: `${index * 0.08}s` }}
+              delay={index * 60}
+              y={28}
+              className="pain-card group flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-8"
             >
               <div className="bg-destructive/20 rounded-full p-4 shrink-0 group-hover:bg-destructive transition-all duration-300 transform group-hover:rotate-12">
                 <Flame className="w-8 h-8 text-destructive group-hover:text-destructive-foreground transition-colors duration-300" />
@@ -77,7 +79,7 @@ export const PainSection = () => {
                   {pain.desc}
                 </p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
