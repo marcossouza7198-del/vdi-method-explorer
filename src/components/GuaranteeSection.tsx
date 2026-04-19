@@ -33,27 +33,6 @@ export const GuaranteeSection = () => {
           Sem perguntas. Sem burocracia. Sem enrolação.
         </p>
       </Reveal>
-
-        <h2 className="text-4xl font-black mb-6">
-          GARANTIA <span className="text-primary glow-text">BLINDADA</span> DE 7 DIAS
-        </h2>
-        
-        <p className="text-2xl font-bold text-primary mb-6 glow-text">
-          É IMPOSSÍVEL VOCÊ NÃO GOSTAR!
-        </p>
-        
-        <p className="text-xl text-muted-foreground mb-4">
-          Aqui qualquer pessoa tem resultado com a internet,
-        </p>
-        
-        <p className="text-2xl font-black text-foreground mb-6">
-          BASTA QUERER MUDAR DE VIDA!
-        </p>
-        
-        <p className="text-lg text-muted-foreground">
-          Sem perguntas. Sem burocracia. Sem enrolação.
-        </p>
-      </div>
     </section>
   );
 };
