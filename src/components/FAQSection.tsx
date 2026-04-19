@@ -41,10 +41,10 @@ export const FAQSection = () => {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
+            <Reveal 
               key={index} 
-              className="faq-item overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-fade-in"
-              style={{ animationDelay: `${(index + 1) * 0.08}s` }}
+              delay={index * 80}
+              className="faq-item overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <button
                 onClick={() => toggleFaq(index)}
@@ -74,7 +74,7 @@ export const FAQSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
