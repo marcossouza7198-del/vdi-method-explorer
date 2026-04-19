@@ -1,6 +1,7 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
+import { Reveal } from "./Reveal";
 
 const testimonials = [
   {
@@ -93,7 +94,6 @@ export const TestimonialsSection = () => {
                       controls
                       preload="metadata"
                       playsInline
-                      muted
                     >
                       <source src={testimonial.video} type="video/mp4" />
                       Seu navegador não suporta vídeos.
@@ -116,10 +116,10 @@ export const TestimonialsSection = () => {
         {/* Social Proof Stats */}
         <div className="grid md:grid-cols-3 gap-6 text-center">
           {stats.map((stat, index) => (
-            <div 
+            <Reveal 
               key={index} 
-              className="stat-card cursor-pointer hover:scale-105 transition-transform duration-300 animate-fade-in"
-              style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+              delay={index * 100}
+              className="stat-card cursor-pointer hover:scale-105 transition-transform duration-300"
             >
               <p className="text-5xl font-black text-primary mb-2 glow-text">
                 {stat.value}
@@ -127,7 +127,7 @@ export const TestimonialsSection = () => {
               <p className="text-muted-foreground font-semibold">
                 {stat.label}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

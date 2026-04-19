@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export const GuaranteeSection = () => {
   return (
@@ -6,7 +7,7 @@ export const GuaranteeSection = () => {
       {/* Static glow background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
 
-      <div className="max-w-3xl mx-auto text-center relative animate-fade-in">
+      <Reveal className="max-w-3xl mx-auto text-center relative">
         <div className="relative inline-block mb-6">
           <div className="absolute inset-0 bg-primary/30 rounded-full blur-xl animate-pulse" />
           <Shield className="w-24 h-24 text-primary mx-auto relative z-10" />
@@ -31,7 +32,7 @@ export const GuaranteeSection = () => {
         <p className="text-lg text-muted-foreground">
           Sem perguntas. Sem burocracia. Sem enrolação.
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 };

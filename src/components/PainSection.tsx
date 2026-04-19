@@ -31,16 +31,8 @@ const painPoints = [
     desc: "…como se tivesse sempre faltando “alguma coisa”.",
   },
   {
-    title: "🔥 Seguir conteúdo gratuito e continuar perdido…",
-    desc: "…porque ninguém te entrega o passo a passo completo.",
-  },
-  {
     title: "🔥 Ter medo de investir mais e perder dinheiro de novo…",
     desc: "…porque já tentou antes e não funcionou.",
-  },
-  {
-    title: "🔥 Passar dias tentando… sem fechar UMA venda sequer",
-    desc: "…enquanto poderia resolver isso em 48 horas com a estratégia certa.",
   },
 ];
 

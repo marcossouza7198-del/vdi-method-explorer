@@ -1,26 +1,21 @@
 import { ShoppingCart } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export const CTASection = () => {
   const checkoutLink = "https://pay.cakto.com.br/u6ipcm4";
 
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(160 40% 8%) 50%, hsl(0 0% 0%) 100%)' }}>
-      <div className="max-w-3xl mx-auto text-center relative">
-        <h2 className="section-title mb-6 animate-fade-in">
+      <Reveal className="max-w-3xl mx-auto text-center relative">
+        <h2 className="section-title mb-6">
           ÚLTIMA <span className="text-primary glow-text">CHANCE</span>
         </h2>
         
-        <p 
-          className="text-xl text-muted-foreground mb-4 animate-fade-in"
-          style={{ animationDelay: '0.1s' }}
-        >
+        <p className="text-xl text-muted-foreground mb-4">
           Daqui 30 dias você pode estar:
         </p>
         
-        <div 
-          className="text-2xl font-bold text-foreground mb-8 animate-fade-in"
-          style={{ animationDelay: '0.2s' }}
-        >
+        <div className="text-2xl font-bold text-foreground mb-8">
           <span className="block mb-2 hover:text-destructive transition-colors duration-300">
             ❌ No mesmo lugar, reclamando da vida
           </span>
@@ -31,10 +26,7 @@ export const CTASection = () => {
         </div>
 
         {/* Pricing Box - Premium */}
-        <div
-          className="relative mb-10 animate-fade-in"
-          style={{ animationDelay: '0.3s' }}
-        >
+        <div className="relative mb-10">
           {/* Glow halo */}
           <div className="absolute -inset-1 bg-gradient-to-r from-primary via-emerald-400 to-primary rounded-3xl blur-2xl opacity-60 animate-pulse" />
 
@@ -79,7 +71,7 @@ export const CTASection = () => {
         </div>
 
         {/* CTA Button - Enhanced */}
-        <div className="relative inline-block mb-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="relative inline-block mb-6">
           {/* Pulsing ring */}
           <div className="absolute inset-0 rounded-full bg-primary/40 blur-xl animate-pulse" />
           <div className="absolute -inset-2 rounded-full border-2 border-primary/40 animate-ping" />
@@ -98,13 +90,10 @@ export const CTASection = () => {
           </a>
         </div>
 
-        <p 
-          className="text-sm text-muted-foreground animate-fade-in"
-          style={{ animationDelay: '0.5s' }}
-        >
+        <p className="text-sm text-muted-foreground">
           ✓ Pagamento 100% Seguro | ✓ Acesso Imediato | ✓ Garantia de 7 Dias
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 };
