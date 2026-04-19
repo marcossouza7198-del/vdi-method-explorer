@@ -90,14 +90,25 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <button
-          onClick={scrollToModulos}
-          className="btn-primary group animate-fade-in hover:scale-105 active:scale-95 transition-transform duration-200"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <span>O QUE EU VOU APRENDER</span>
-          <ChevronDown className="w-6 h-6 animate-bounce" />
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <a
+            href="https://pay.cakto.com.br/u6ipcm4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta group w-full sm:w-auto"
+          >
+            <Zap className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <span>QUERO MINHA PRIMEIRA VENDA EM 48H</span>
+          </a>
+
+          <button
+            onClick={scrollToModulos}
+            className="btn-secondary group w-full sm:w-auto flex items-center justify-center gap-2 py-4 px-8 rounded-full border-2 border-primary/20 hover:border-primary/50 transition-all font-bold text-foreground"
+          >
+            <span>O QUE VOU APRENDER</span>
+            <ChevronDown className="w-6 h-6 animate-bounce" />
+          </button>
+        </div>
 
         <p
           className="text-sm text-muted-foreground mt-4 animate-fade-in"
