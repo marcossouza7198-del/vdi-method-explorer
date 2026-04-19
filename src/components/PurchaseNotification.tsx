@@ -39,54 +39,50 @@ export const PurchaseNotification = () => {
     city: "",
     minutes: 0
   });
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
 
   useEffect(() => {
-    // Create audio element - Braip style "cha-ching" notification sound
-    // Using Web Audio API to create a pleasant coin/sale sound
-    const playNotificationSound = () => {
+    const playNotificationSound = async () => {
       try {
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+        if (!audioContextRef.current) {
+          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        }
         
-        // Create oscillators for the "cha-ching" effect
+        const ctx = audioContextRef.current;
+        
+        if (ctx.state === 'suspended') {
+          await ctx.resume();
+        }
+        
         const createTone = (frequency: number, startTime: number, duration: number, volume: number) => {
-          const oscillator = audioContext.createOscillator();
-          const gainNode = audioContext.createGain();
+          const oscillator = ctx.createOscillator();
+          const gainNode = ctx.createGain();
           
           oscillator.connect(gainNode);
-          gainNode.connect(audioContext.destination);
+          gainNode.connect(ctx.destination);
           
           oscillator.frequency.value = frequency;
           oscillator.type = 'sine';
           
-          gainNode.gain.setValueAtTime(0, audioContext.currentTime + startTime);
-          gainNode.gain.linearRampToValueAtTime(volume, audioContext.currentTime + startTime + 0.01);
-          gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + startTime + duration);
+          gainNode.gain.setValueAtTime(0, ctx.currentTime + startTime);
+          gainNode.gain.linearRampToValueAtTime(volume, ctx.currentTime + startTime + 0.01);
+          gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + startTime + duration);
           
-          oscillator.start(audioContext.currentTime + startTime);
-          oscillator.stop(audioContext.currentTime + startTime + duration);
+          oscillator.start(ctx.currentTime + startTime);
+          oscillator.stop(ctx.currentTime + startTime + duration);
         };
         
-        // First "cha" - lower tones
-        createTone(800, 0, 0.1, 0.15);
-        createTone(1000, 0.02, 0.08, 0.12);
-        
-        // "Ching" - higher, brighter tones (like coins)
-        createTone(1400, 0.1, 0.15, 0.18);
-        createTone(1800, 0.12, 0.12, 0.15);
-        createTone(2200, 0.14, 0.18, 0.12);
-        createTone(2600, 0.16, 0.2, 0.08);
-        
-        // Sparkle effect
-        createTone(3000, 0.2, 0.15, 0.06);
-        createTone(3500, 0.25, 0.12, 0.04);
+        createTone(800, 0, 0.1, 0.1);
+        createTone(1000, 0.02, 0.08, 0.08);
+        createTone(1400, 0.1, 0.15, 0.12);
+        createTone(1800, 0.12, 0.12, 0.1);
+        createTone(2200, 0.14, 0.18, 0.08);
+        createTone(2600, 0.16, 0.2, 0.05);
         
       } catch (e) {
-        console.log('Audio not supported');
+        // Silent fail
       }
     };
-    
-    audioRef.current = { play: playNotificationSound } as any;
     
     const showNotification = () => {
       setNotification({
@@ -96,26 +92,22 @@ export const PurchaseNotification = () => {
       });
       setIsVisible(true);
       
-      // Play sound
-      if (audioRef.current) {
-        (audioRef.current as any).play();
-      }
+      playNotificationSound();
 
-      // Hide after 4 seconds
       setTimeout(() => {
         setIsVisible(false);
-      }, 4000);
+      }, 5000);
     };
 
-    // Show first notification after 3 seconds
-    const initialTimeout = setTimeout(showNotification, 3000);
-
-    // Then show every 10 seconds
-    const interval = setInterval(showNotification, 10000);
+    const initialTimeout = setTimeout(showNotification, 5000);
+    const interval = setInterval(showNotification, 15000);
 
     return () => {
       clearTimeout(initialTimeout);
       clearInterval(interval);
+      if (audioContextRef.current) {
+        audioContextRef.current.close();
+      }
     };
   }, []);
 
