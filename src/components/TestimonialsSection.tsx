@@ -1,6 +1,7 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
+import { Reveal } from "./Reveal";
 
 const testimonials = [
   {

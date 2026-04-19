@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const forYou = [
   "Você quer fazer sua PRIMEIRA venda online em até 48h",
@@ -36,9 +37,9 @@ export const ForWhomSection = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* For you */}
-          <div
-            className="relative p-8 rounded-2xl border-2 border-primary bg-gradient-to-br from-primary/15 to-card animate-fade-in hover:scale-[1.02] transition-transform duration-300"
-            style={{ animationDelay: "0.2s" }}
+          <Reveal
+            delay={100}
+            className="relative p-8 rounded-2xl border-2 border-primary bg-gradient-to-br from-primary/15 to-card hover:scale-[1.02] transition-transform duration-300"
           >
             <div className="absolute -top-4 left-6 bg-primary text-primary-foreground text-sm font-black px-4 py-1.5 rounded-full">
               ✅ É PRA VOCÊ SE...
@@ -51,12 +52,12 @@ export const ForWhomSection = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           {/* Not for you */}
-          <div
-            className="relative p-8 rounded-2xl border-2 border-destructive bg-gradient-to-br from-destructive/15 to-card animate-fade-in hover:scale-[1.02] transition-transform duration-300"
-            style={{ animationDelay: "0.3s" }}
+          <Reveal
+            delay={200}
+            className="relative p-8 rounded-2xl border-2 border-destructive bg-gradient-to-br from-destructive/15 to-card hover:scale-[1.02] transition-transform duration-300"
           >
             <div className="absolute -top-4 left-6 bg-destructive text-destructive-foreground text-sm font-black px-4 py-1.5 rounded-full">
               ❌ NÃO É PRA VOCÊ SE...
@@ -69,7 +70,7 @@ export const ForWhomSection = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
 
         <p
