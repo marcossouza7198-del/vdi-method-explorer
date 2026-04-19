@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Landing Page Project
 
 ## Project info
 
