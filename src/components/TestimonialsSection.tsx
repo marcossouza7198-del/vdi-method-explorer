@@ -93,7 +93,6 @@ export const TestimonialsSection = () => {
                       controls
                       preload="metadata"
                       playsInline
-                      muted
                     >
                       <source src={testimonial.video} type="video/mp4" />
                       Seu navegador não suporta vídeos.
