@@ -1,33 +1,32 @@
-import marquee1 from "@/assets/marquee-1.jpg";
-import marquee2 from "@/assets/marquee-2.jpg";
-import marquee3 from "@/assets/marquee-3.jpg";
-import marquee4 from "@/assets/marquee-4.jpg";
-import marquee5 from "@/assets/marquee-5.jpg";
-import marquee6 from "@/assets/marquee-6.jpg";
+import result1 from "@/assets/result-1.jpeg";
+import result2 from "@/assets/result-2.jpeg";
+import result3 from "@/assets/result-3.jpeg";
+import result4 from "@/assets/result-4.jpeg";
+import result5 from "@/assets/result-5.jpeg";
+import { Reveal } from "./Reveal";
 
-const images = [
-  { src: marquee1, alt: "Notificação Pix recebido" },
-  { src: marquee2, alt: "Trabalhando do conforto de casa" },
-  { src: marquee3, alt: "Vendas chegando no WhatsApp" },
-  { src: marquee4, alt: "Dinheiro em espécie" },
-  { src: marquee5, alt: "Liberdade geográfica" },
-  { src: marquee6, alt: "Dashboard de vendas crescendo" },
+const items = [
+  { src: result1, alt: "Resultado de aluno - quase R$300 no dia", caption: "Resultado de 6 dias" },
+  { src: result2, alt: "Painel de vendas R$ 1.543,48 no dia", caption: "Resultado de 9 dias" },
+  { src: result3, alt: "Painel de vendas R$ 233,30 no dia", caption: "Resultado de 10 dias" },
+  { src: result4, alt: "Painel de vendas R$ 101,39 no dia", caption: "Resultado de 11 dias" },
+  { src: result5, alt: "Painel de vendas R$ 447,56 no dia", caption: "Resultado de 16 dias" },
 ];
 
-// Duplicate the array so the marquee loops seamlessly
-const loop = [...images, ...images];
+// Duplicate so the marquee loops seamlessly
+const loop = [...items, ...items];
 
 export const MarqueeSection = () => {
   return (
     <section className="py-16 bg-background relative overflow-hidden border-y-2 border-primary/20">
-      <div className="max-w-6xl mx-auto px-4 mb-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-black mb-3">
+      <Reveal className="max-w-6xl mx-auto px-4 mb-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-black mb-3 uppercase">
           A <span className="text-primary glow-text">REALIDADE</span> DE QUEM APLICOU
         </h2>
         <p className="text-muted-foreground text-lg">
-          Notificações, vendas, liberdade. Isso pode ser seu também.
+          Prints reais de alunos. Isso pode ser seu também.
         </p>
-      </div>
+      </Reveal>
 
       <div className="relative">
         {/* Edge fade overlays */}
@@ -35,19 +34,22 @@ export const MarqueeSection = () => {
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-background to-transparent" />
 
         <div className="flex gap-6 animate-marquee will-change-transform">
-          {loop.map((img, i) => (
+          {loop.map((item, i) => (
             <div
               key={i}
-              className="flex-none w-[260px] h-[260px] rounded-2xl overflow-hidden border-2 border-primary/40 shadow-[0_0_30px_hsl(160_84%_39%_/_0.25)] hover:scale-105 hover:border-primary transition-transform duration-300"
+              className="flex-none w-[280px] flex flex-col items-center gap-3"
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                width={768}
-                height={768}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+              <div className="w-[280px] h-[280px] rounded-2xl overflow-hidden border-2 border-primary/40 shadow-[0_0_30px_hsl(160_84%_39%_/_0.25)] hover:scale-105 hover:border-primary transition-transform duration-300 bg-card">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-primary font-bold text-base glow-text">
+                ✅ {item.caption}
+              </p>
             </div>
           ))}
         </div>

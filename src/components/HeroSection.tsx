@@ -35,14 +35,6 @@ export const HeroSection = () => {
           <CountdownTimer />
         </div>
 
-        {/* Top Banner Text */}
-        <div 
-          className="bg-primary/20 border border-primary/40 rounded-xl p-4 mb-8 text-foreground font-bold animate-fade-in backdrop-blur-sm"
-          style={{ animationDelay: "0.02s" }}
-        >
-          🚀 Você literalmente vai copiar o criativo que eu já testei, subir um anúncio simples e usar meu roteiro de resposta no WhatsApp.
-        </div>
-
         {/* Badge */}
         <div
           className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6 animate-fade-in backdrop-blur-sm"
@@ -53,10 +45,10 @@ export const HeroSection = () => {
         </div>
 
         <h1
-          className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] animate-fade-in"
+          className="text-4xl md:text-6xl font-black mb-8 leading-[1.1] animate-fade-in uppercase"
           style={{ animationDelay: "0.1s" }}
         >
-          Se você seguir isso aqui, sua <span className="text-primary glow-text">primeira venda</span> pode sair em <span className="text-primary glow-text">até 48 horas!</span>
+          SE VOCÊ SEGUIR ISSO AQUI, SUA <span className="text-primary glow-text">PRIMEIRA VENDA</span> PODE SAIR EM <span className="text-primary glow-text">ATÉ 48 HORAS!</span>
         </h1>
 
         <p

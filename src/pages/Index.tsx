@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { HeroSection } from "@/components/HeroSection";
+import { Reveal } from "@/components/Reveal";
 
 // Lazy load components below the fold for faster initial load
 const PainSection = lazy(() => import("@/components/PainSection").then(m => ({ default: m.PainSection })));
@@ -30,35 +31,35 @@ const Index = () => {
       <HeroSection />
 
       <Suspense fallback={<SectionSkeleton />}>
-        <PainSection />
+        <Reveal y={32}><PainSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <ForWhomSection />
+        <Reveal y={32}><ForWhomSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <MarqueeSection />
+        <Reveal y={32}><MarqueeSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <ModulesSection />
+        <Reveal y={32}><ModulesSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <TestimonialsSection />
+        <Reveal y={32}><TestimonialsSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <GuaranteeSection />
+        <Reveal y={32}><GuaranteeSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <CTASection />
+        <Reveal y={32}><CTASection /></Reveal>
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <FAQSection />
+        <Reveal y={32}><FAQSection /></Reveal>
       </Suspense>
 
       <Suspense fallback={null}>

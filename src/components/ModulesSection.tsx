@@ -1,4 +1,5 @@
 import { Check, Gift, Sparkles, Crown } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const modules = [
   {
@@ -74,10 +75,10 @@ export const ModulesSection = () => {
         {/* Modules — modern card grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-20">
           {modules.map((module, index) => (
-            <div
+            <Reveal
               key={index}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${(index + 2) * 0.1}s` }}
+              delay={index * 90}
+              className="group relative"
             >
               {/* Glow halo on hover */}
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/40 to-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -104,7 +105,7 @@ export const ModulesSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
@@ -125,10 +126,10 @@ export const ModulesSection = () => {
         {/* Bonuses — premium cards */}
         <div className="grid md:grid-cols-2 gap-6">
           {bonuses.map((bonus, index) => (
-            <div
+            <Reveal
               key={index}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${(index + 7) * 0.1}s` }}
+              delay={index * 90}
+              className="group relative"
             >
               <div className="absolute -inset-0.5 bg-gradient-to-br from-primary via-primary/50 to-primary rounded-2xl blur opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -154,7 +155,7 @@ export const ModulesSection = () => {
                   {bonus.description}
                 </p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
