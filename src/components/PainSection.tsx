@@ -59,25 +59,23 @@ export const PainSection = () => {
           Olha pra essa lista e me diga: <span className="text-destructive">quantas dessas você AINDA aceita?</span>
         </p>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="max-w-4xl mx-auto space-y-6">
           {painPoints.map((pain, index) => (
             <div
               key={index}
-              className="pain-card group animate-fade-in"
+              className="pain-card group animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-8"
               style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="bg-destructive/20 rounded-full p-2 shrink-0 group-hover:bg-destructive transition-colors duration-300">
-                  <Flame className="w-5 h-5 text-destructive group-hover:text-destructive-foreground transition-colors duration-300" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-black text-foreground mb-1 leading-tight">
-                    {pain.title}
-                  </h3>
-                  <p className="text-muted-foreground text-base leading-snug group-hover:text-foreground/90 transition-colors duration-300">
-                    {pain.desc}
-                  </p>
-                </div>
+              <div className="bg-destructive/20 rounded-full p-4 shrink-0 group-hover:bg-destructive transition-all duration-300 transform group-hover:rotate-12">
+                <Flame className="w-8 h-8 text-destructive group-hover:text-destructive-foreground transition-colors duration-300" />
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-black text-foreground mb-2 leading-tight">
+                  {pain.title}
+                </h3>
+                <p className="text-muted-foreground text-lg leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
+                  {pain.desc}
+                </p>
               </div>
             </div>
           ))}
