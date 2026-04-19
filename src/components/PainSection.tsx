@@ -2,28 +2,44 @@ import { Flame } from "lucide-react";
 
 const painPoints = [
   {
-    title: "Trabalhar feito um ESCRAVO o mês inteiro...",
-    desc: "...e ainda assim, no dia 30, o dinheiro NÃO chega no fim do mês.",
+    title: "Rodar anúncio e NÃO sair nenhuma venda…",
+    desc: "…e sentir que só tá queimando dinheiro sem entender o porquê.",
   },
   {
-    title: "Ver gente MEDÍOCRE faturando alto na internet...",
-    desc: "...enquanto você, que é mais inteligente, continua preso na mesma vida.",
+    title: "🔥 Ver gente vendendo TODO DIA…",
+    desc: "…enquanto você posta, anuncia e ninguém compra nada de você.",
   },
   {
-    title: "Pedir 'liberado' pro patrão pra ir no médico...",
-    desc: "...como se você fosse uma criança que precisa de permissão pra viver.",
+    title: "🔥 Testar estratégia atrás de estratégia…",
+    desc: "…e nenhuma funcionar de verdade.",
   },
   {
-    title: "Negar passeio pros seus filhos por falta de grana...",
-    desc: "...e ver a tristeza no rosto deles. Isso DESTRÓI por dentro.",
+    title: "🔥 Ter produto na mão… mas não saber vender",
+    desc: "…porque falta o criativo certo que faz o cliente clicar e comprar.",
   },
   {
-    title: "Acordar todo dia com o peso do FRACASSO nas costas...",
-    desc: "...sabendo que mais um dia vai passar e NADA vai mudar.",
+    title: "🔥 Investir no tráfego e só ver número subir…",
+    desc: "…menos o que importa: as vendas.",
   },
   {
-    title: "Ver seus amigos viajando, prosperando, vivendo...",
-    desc: "...enquanto você posta foto de comida no instagram fingindo que está tudo bem.",
+    title: "🔥 Ficar travado sem saber o que fazer primeiro…",
+    desc: "…e perder tempo com coisa que não dá resultado.",
+  },
+  {
+    title: "🔥 Sentir que tá perto… mas nunca sai a primeira venda",
+    desc: "…como se tivesse sempre faltando “alguma coisa”.",
+  },
+  {
+    title: "🔥 Seguir conteúdo gratuito e continuar perdido…",
+    desc: "…porque ninguém te entrega o passo a passo completo.",
+  },
+  {
+    title: "🔥 Ter medo de investir mais e perder dinheiro de novo…",
+    desc: "…porque já tentou antes e não funcionou.",
+  },
+  {
+    title: "🔥 Passar dias tentando… sem fechar UMA venda sequer",
+    desc: "…enquanto poderia resolver isso em 48 horas com a estratégia certa.",
   },
 ];
 
