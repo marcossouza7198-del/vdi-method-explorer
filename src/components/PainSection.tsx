@@ -2,28 +2,44 @@ import { Flame } from "lucide-react";
 
 const painPoints = [
   {
-    title: "Trabalhar feito um ESCRAVO o mês inteiro...",
-    desc: "...e ainda assim, no dia 30, o dinheiro NÃO chega no fim do mês.",
+    title: "Rodar anúncio e NÃO sair nenhuma venda…",
+    desc: "…e sentir que só tá queimando dinheiro sem entender o porquê.",
   },
   {
-    title: "Ver gente MEDÍOCRE faturando alto na internet...",
-    desc: "...enquanto você, que é mais inteligente, continua preso na mesma vida.",
+    title: "🔥 Ver gente vendendo TODO DIA…",
+    desc: "…enquanto você posta, anuncia e ninguém compra nada de você.",
   },
   {
-    title: "Pedir 'liberado' pro patrão pra ir no médico...",
-    desc: "...como se você fosse uma criança que precisa de permissão pra viver.",
+    title: "🔥 Testar estratégia atrás de estratégia…",
+    desc: "…e nenhuma funcionar de verdade.",
   },
   {
-    title: "Negar passeio pros seus filhos por falta de grana...",
-    desc: "...e ver a tristeza no rosto deles. Isso DESTRÓI por dentro.",
+    title: "🔥 Ter produto na mão… mas não saber vender",
+    desc: "…porque falta o criativo certo que faz o cliente clicar e comprar.",
   },
   {
-    title: "Acordar todo dia com o peso do FRACASSO nas costas...",
-    desc: "...sabendo que mais um dia vai passar e NADA vai mudar.",
+    title: "🔥 Investir no tráfego e só ver número subir…",
+    desc: "…menos o que importa: as vendas.",
   },
   {
-    title: "Ver seus amigos viajando, prosperando, vivendo...",
-    desc: "...enquanto você posta foto de comida no instagram fingindo que está tudo bem.",
+    title: "🔥 Ficar travado sem saber o que fazer primeiro…",
+    desc: "…e perder tempo com coisa que não dá resultado.",
+  },
+  {
+    title: "🔥 Sentir que tá perto… mas nunca sai a primeira venda",
+    desc: "…como se tivesse sempre faltando “alguma coisa”.",
+  },
+  {
+    title: "🔥 Seguir conteúdo gratuito e continuar perdido…",
+    desc: "…porque ninguém te entrega o passo a passo completo.",
+  },
+  {
+    title: "🔥 Ter medo de investir mais e perder dinheiro de novo…",
+    desc: "…porque já tentou antes e não funcionou.",
+  },
+  {
+    title: "🔥 Passar dias tentando… sem fechar UMA venda sequer",
+    desc: "…enquanto poderia resolver isso em 48 horas com a estratégia certa.",
   },
 ];
 
@@ -43,25 +59,23 @@ export const PainSection = () => {
           Olha pra essa lista e me diga: <span className="text-destructive">quantas dessas você AINDA aceita?</span>
         </p>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="max-w-4xl mx-auto space-y-6">
           {painPoints.map((pain, index) => (
             <div
               key={index}
-              className="pain-card group animate-fade-in"
+              className="pain-card group animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left p-8"
               style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="bg-destructive/20 rounded-full p-2 shrink-0 group-hover:bg-destructive transition-colors duration-300">
-                  <Flame className="w-5 h-5 text-destructive group-hover:text-destructive-foreground transition-colors duration-300" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-black text-foreground mb-1 leading-tight">
-                    {pain.title}
-                  </h3>
-                  <p className="text-muted-foreground text-base leading-snug group-hover:text-foreground/90 transition-colors duration-300">
-                    {pain.desc}
-                  </p>
-                </div>
+              <div className="bg-destructive/20 rounded-full p-4 shrink-0 group-hover:bg-destructive transition-all duration-300 transform group-hover:rotate-12">
+                <Flame className="w-8 h-8 text-destructive group-hover:text-destructive-foreground transition-colors duration-300" />
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-black text-foreground mb-2 leading-tight">
+                  {pain.title}
+                </h3>
+                <p className="text-muted-foreground text-lg leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
+                  {pain.desc}
+                </p>
               </div>
             </div>
           ))}
