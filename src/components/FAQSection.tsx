@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const faqs = [
   {

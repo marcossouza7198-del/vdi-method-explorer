@@ -1,11 +1,12 @@
 import { ShoppingCart } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export const CTASection = () => {
   const checkoutLink = "https://pay.cakto.com.br/u6ipcm4";
 
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(160 40% 8%) 50%, hsl(0 0% 0%) 100%)' }}>
-      <div className="max-w-3xl mx-auto text-center relative">
+      <Reveal className="max-w-3xl mx-auto text-center relative">
         <h2 className="section-title mb-6 animate-fade-in">
           ÚLTIMA <span className="text-primary glow-text">CHANCE</span>
         </h2>
@@ -96,7 +97,7 @@ export const CTASection = () => {
               <span>GARANTIR MINHA VAGA</span>
             </span>
           </a>
-        </div>
+      </Reveal>
 
         <p 
           className="text-sm text-muted-foreground animate-fade-in"
